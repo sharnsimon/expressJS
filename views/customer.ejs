@@ -1,0 +1,83 @@
+<style>
+    
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Poppins&display=swap');
+
+    body{
+        background-image: url("https://miro.medium.com/v2/resize:fit:720/1*y93jZzftu0aJQyc0SjEmTg.gif");
+        font-family: orbitron;
+    }
+    #but1{
+        margin-bottom: 5vh;
+        margin-left: 85vh;
+        width:5rem;
+        background-color: black;
+        color: greenyellow;
+        width:225px;
+        height:40px;
+        border: 1px solid greenyellow;
+        transition: 1s;
+        font-family: orbitron;
+        letter-spacing: 1px;
+    }
+    #but1:hover{
+        background-color: greenyellow;
+        color:black;
+        box-shadow: 2px 2px 15px greenyellow inset,2px 2px 15px greenyellow;
+        
+    }
+    table{
+        margin-left: 85vh;
+        border: 1px solid darkgreen;
+        background-color: black ;
+        color:greenyellow;
+        width:225px;
+        box-shadow: 1px 1px 5px greenyellow inset,1px 1px 5px greenyellow;
+    } 
+    h1 {
+      color: yellowgreen;
+      text-align: center;
+      text-shadow: 3px 3px 35px green;
+    
+    }
+    
+</style>
+<script>
+    function addCustomer(){
+    var a= document.createElement('a');
+    a.href="http://localhost:3000/addCustomer"
+    a.click()
+    }
+    function updateCustomer(){
+    var a= document.createElement('a');
+    a.href="http://localhost:3000/updateCustomer"
+    a.click()
+    }
+    function rowSelect(id){
+        var a= document.createElement('a');
+        a.href=`http://localhost:3000/addCustomer/${id}`
+        a.click()
+    }
+    
+
+    
+
+   
+</script>
+<%- include('./partials/footer.ejs')%>
+<h1>Welcome to Customer page</h1>
+<table border="1px">
+   <tr>
+    <th>id</th>
+    <th>firstname</th>
+    <th>lastname</th>
+   </tr>
+   <%data.forEach((cust)=>{%>
+    <tr onclick="rowSelect(`<%=cust.id%>`)">
+        <td><%=cust.id%></td>
+        <td><%=cust.fname%></td>
+        <td><%=cust.lname%></td>    
+    </tr>
+   <% })%>
+</table><br>
+<button id="but1" onclick="addCustomer()">ADD</button><br>
+<button id="but1"onclick="updateCustomer()">UPDATE</button>

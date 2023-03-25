@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Poppins&display=swap');
+    
+        body{
+            background-image: url("https://miro.medium.com/v2/resize:fit:720/1*y93jZzftu0aJQyc0SjEmTg.gif");
+            font-family: orbitron;
+        }
+        #but1{
+            margin-bottom: 5vh;
+            margin-left: 85vh;
+            width:5rem;
+            background-color: black;
+            color: greenyellow;
+            width:225px;
+            height:40px;
+            border: 1px solid greenyellow;
+            transition: 1s;
+            font-family: orbitron;
+            letter-spacing: 1px;
+        }
+        #but1:hover{
+            background-color: greenyellow;
+            color:black;
+            box-shadow: 2px 2px 15px greenyellow inset,2px 2px 15px greenyellow;
+            
+        }
+        table{
+            margin-left: 85vh;
+            border: 1px solid darkgreen;
+            background-color: black ;
+            color:greenyellow;
+            width:190px;
+            box-shadow: 1px 1px 5px greenyellow inset,1px 1px 5px greenyellow;
+        } 
+        h1 {
+          color: yellowgreen;
+          text-align: center;
+          text-shadow: 3px 3px 35px green;
+        
+        }
+        
+    </style>
+</head>
+<body>
+    <%- include('./partials/footer.ejs')%>
+    <h1>Welcome to home page <%=name%></h1>
+</body>
+</html>

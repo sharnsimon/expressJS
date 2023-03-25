@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            /* background-color: rgb(0, 0, 0); */
+            background-image: url("https://miro.medium.com/v2/resize:fit:720/1*y93jZzftu0aJQyc0SjEmTg.gif");
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 240px;
+            border: 2px solid rgb(1, 245, 41);
+            border-radius: 200px;
+            padding: 50px;
+            background-color: rgba(238, 232, 232, 0.06);
+            color: white;
+        }
+        div{
+            margin-left: 500px;
+            margin-top: 35vh;
+            border-radius: px;
+        }
+        #firstname,#id{
+            border-radius:20px;
+            width:13rem ;
+            height:3vh;
+            border-color: green;
+            border: 2px solid green;
+            margin-bottom: 10px;
+        
+        }
+        #lastname{
+            border-radius:20px;
+            width:13rem ;
+            height:3vh;
+            border-color: green;
+            border: 2px solid green;
+            margin-bottom: 30px;
+        }
+        h3{
+            align-self: center;
+            margin-top: 2px;
+            color: greenyellow;
+        }
+        button{
+            border-radius:20px;
+            width:6rem ;
+            height:2rem;
+            border-color: green;
+            border: 3px solid black;
+            margin-left: 4rem;
+            background-color: rgba(48, 250, 8,0.8) 
+        
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function onSubmit(){
+            let firstName=document.getElementById('firstname').value;
+            let lastName=document.getElementById('lastname').value;
+            let id=document.getElementById('id').value
+            fetch('http://localhost:3000/updateTable',{
+                method:'PUT',
+                body:JSON.stringify({ firstName:firstName,lastName:lastName,id:id }),
+                headers:{
+                    'Content-Type':'application/json'
+                }}).then((res)=>{
+                    var a= document.createElement('a');
+                    a.href='http://localhost:3000/customer';
+                    a.click()
+                })
+
+            }
+            // console.log(req.body)
+        
+    </script>
+    <div>
+    <form>
+        <h3>UPDATE NAME</h3>
+        <input type="text" id="id" name="id" placeholder="id"><br>
+        <!-- <label for="fname">Firstname:</label> -->
+        <input type="text" id="firstname" name="fname" placeholder="firstname"><br>
+        <!-- <label for="fname">Las<tname:</label> -->
+        <input type="text" id="lastname" name="lname" placeholder="lastname">
+
+
+        <button onclick="onSubmit()">UPDATE</button>
+    </form>
+    </div>
+
+</body>
+</html>
+
