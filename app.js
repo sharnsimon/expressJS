@@ -32,8 +32,7 @@ const models = require('./models');
     console.log('unable to connect to sql database:sequelize',err.message);
   });
   models.sequelize.sync({alter:true});
-
-
+  
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

@@ -34,3 +34,29 @@ const getCustomersID= async function(req,res) {
     if(customers) return ReS(res,customers,200);
 }
 module.exports.getCustomersID = getCustomersID;
+
+const getCustomersName= async function(req,res) {
+    let[err,customers] = await to(Customer.findOne({
+    
+        where:{
+            name:req.params.name
+        }
+    }));
+    console.log('customers data',customers);
+    if(err) return ReE(res,err,422);
+    if(customers) return ReS(res,customers,200);
+}
+module.exports.getCustomersName = getCustomersName;
+
+const updateCustomers= async function(req,res) {
+    let[err,customers] = await to(Customer.update({name:'yuva'},{
+        where:{
+            id:1
+        }
+    }));
+    console.log('customers data',customers);
+    if(err) return ReE(res,err,422);
+    if(customers) return ReS(res,customers,200);
+}
+module.exports.updateCustomers = updateCustomers;
+
