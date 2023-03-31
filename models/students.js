@@ -15,13 +15,18 @@ module.exports=(sequelize,DataTypes) =>{
         
         },
         gender:{
+            type:DataTypes.STRING,
             allowNull:false
 
         },
         departmentId:{
+            type:DataTypes.INTEGER,
+            allowNull:false
+            
 
         },
         isActive:{
+            type:DataTypes.BOOLEAN,
             defaultValue:true
         }},
             

@@ -29,7 +29,7 @@ module.exports=(sequelize,DataTypes) =>{
     });
     Model.associate= function(models){
 
-        //says that departmentId belongs to department table
+
         this.studentId=this.belongsTo(models.student)
         this.countryId=this.belongsTo(models.country)
     };

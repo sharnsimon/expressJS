@@ -17,7 +17,7 @@ module.exports=(sequelize,DataTypes) =>{
         underscored : false,
     });    
     Model.associate= function(models){
-        this.address=this.hasMany(models.address)
+        this.address=this.hasMany(models.address);
     };
     return Model;
 }  
