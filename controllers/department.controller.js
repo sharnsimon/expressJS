@@ -5,9 +5,7 @@ require('../config/config');
 
 const addDepartment = async function(req,res) {
     let[err,department] = await to(Department.bulkCreate([
-        {name:'CSE'},
-        {name:'EEE'},
-        {name:'ECE'}
+        {name:req.body.name}
     ]));
     console.log('Department Details',department);
     if(err) return ReE(res,err,422);

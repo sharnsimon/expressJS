@@ -5,9 +5,7 @@ require('../config/config');
 
 const addStudent = async function(req,res) {
     let[err,student] = await to(Student.bulkCreate([
-        {firstName:'Sharn',lastName:'Simon',gender:'Male',departmentId:1},
-        {firstName:'Selva',lastName:'Raj',gender:'Male',departmentId:2},
-        {firstName:'Sharvesh',lastName:'Ram',gender:'Male',departmentId:3}
+        {firstName:req.body.firstName,lastName:req.body.lastName,gender:req.body.gender,departmentId:req.body.departmentId}
     ]));
     console.log('Student Details',student);
     if(err) return ReE(res,err,422);
