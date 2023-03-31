@@ -16,6 +16,8 @@ module.exports=(sequelize,DataTypes) =>{
         paronoid : true,
         underscored : false,
     });    
+
+    //means one student can be a part of one department only
     Model.associate= function(models){
         this.student=this.hasOne(models.student)
     };
