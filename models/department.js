@@ -19,7 +19,7 @@ module.exports=(sequelize,DataTypes) =>{
 
     //means one student can be a part of one department only
     Model.associate= function(models){
-        this.student=this.hasOne(models.student)
+        this.student=this.hasMany(models.student)
     };
     return Model;
 }   
