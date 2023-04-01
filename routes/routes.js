@@ -15,9 +15,10 @@ router.get('/customer/:id', customerController.getCustomersID);
 router.get('/getCustomer/:name', customerController.getCustomersName);
 router.put('/updateCustomers', customerController.updateCustomers);
 
-router.get('/address',addressController.addAddress);
-router.get('/country',countryController.addCountry);
-router.get('/department',departmentController.addDepartment)
-router.get('/student',studentController.addStudent);
-
+router.post('/address',addressController.addAddress);
+router.post('/country',countryController.addCountry);
+router.post('/department',departmentController.addDepartment)
+router.post('/student',studentController.addStudent);
+router.post('/newStudentReq',studentController.newStudentReq)
+router.post('/newAddressReq',addressController.newAddressReq)
 module.exports = router;
