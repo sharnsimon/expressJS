@@ -19,5 +19,6 @@ router.post('/address',addressController.addAddress);
 router.post('/country',countryController.addCountry);
 router.post('/department',departmentController.addDepartment)
 router.post('/student',studentController.addStudent);
-
+router.post('/newStudentReq',studentController.newStudentReq)
+router.post('/newAddressReq',addressController.newAddressReq)
 module.exports = router;
